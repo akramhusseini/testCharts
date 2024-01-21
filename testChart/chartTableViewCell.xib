@@ -181,6 +181,7 @@
                 <outlet property="label2" destination="NfU-u8-ses" id="l92-Cy-m11"/>
                 <outlet property="label3" destination="6Xe-o4-ONO" id="0CH-z1-tXN"/>
                 <outlet property="label4" destination="LQN-Y3-Qn3" id="hLl-3D-4g3"/>
+                <outlet property="maxValueLabel" destination="PQB-Sc-Q1D" id="rzY-gK-2Jb"/>
                 <outlet property="stroakLine1" destination="UUg-BN-ZgD" id="KON-aI-FaU"/>
                 <outlet property="stroakLine2" destination="iFz-AC-EKp" id="Se8-Zt-g7H"/>
                 <outlet property="stroakLine3" destination="uri-Yz-LQA" id="Wge-KC-Ysx"/>
