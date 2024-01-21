@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "25A76A91-B9DE-4C1F-92D0-10D043177C67"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2534785F-9211-44A6-A361-BAF5DD2986F1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "testChart/chartTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "populateLabels(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9093A923-DECA-4530-AA43-AD637A5D5711"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "extensions.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "addStroakLine(lineYPosition:lineWidth:color:dashPattern:viewWidth:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9093A923-DECA-4530-AA43-AD637A5D5711 - 50c7c709fa27c0c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIView.addStroakLine(lineYPosition: CoreGraphics.CGFloat, lineWidth: CoreGraphics.CGFloat, color: __C.UIColor, dashPattern: Swift.Array&lt;__C.NSNumber&gt;) -&gt; ()"
+                  moduleName = "testChart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akramhusseini/work/test/testChart/extensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "1960">
+               </Location>
+               <Location
+                  uuid = "9093A923-DECA-4530-AA43-AD637A5D5711 - 1817f7511446473c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIView.addStroakLine(lineYPosition: CoreGraphics.CGFloat, lineWidth: CoreGraphics.CGFloat, color: __C.UIColor, dashPattern: Swift.Array&lt;__C.NSNumber&gt;, viewWidth: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; ()"
+                  moduleName = "testChart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akramhusseini/work/test/testChart/extensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "2052">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3DED66BB-3ED2-4F5D-B9C4-AE8F7D7E2D5A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "extensions.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "addStroakLine(lineYPosition:lineWidth:color:dashPattern:viewWidth:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3DED66BB-3ED2-4F5D-B9C4-AE8F7D7E2D5A - 50c7c709fa27cd44"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIView.addStroakLine(lineYPosition: CoreGraphics.CGFloat, lineWidth: CoreGraphics.CGFloat, color: __C.UIColor, dashPattern: Swift.Array&lt;__C.NSNumber&gt;) -&gt; ()"
+                  moduleName = "testChart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akramhusseini/work/test/testChart/extensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "1164">
+               </Location>
+               <Location
+                  uuid = "3DED66BB-3ED2-4F5D-B9C4-AE8F7D7E2D5A - 1817f7511446490f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIView.addStroakLine(lineYPosition: CoreGraphics.CGFloat, lineWidth: CoreGraphics.CGFloat, color: __C.UIColor, dashPattern: Swift.Array&lt;__C.NSNumber&gt;, viewWidth: Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; ()"
+                  moduleName = "testChart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/akramhusseini/work/test/testChart/extensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "1204">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -13,6 +13,10 @@
 		EAB721822B593CCC00628EEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB721802B593CCC00628EEB /* Main.storyboard */; };
 		EAB721842B593CCD00628EEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB721832B593CCD00628EEB /* Assets.xcassets */; };
 		EAB721872B593CCD00628EEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB721852B593CCD00628EEB /* LaunchScreen.storyboard */; };
+		EAB7218F2B593CF100628EEB /* customChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB7218E2B593CF100628EEB /* customChart.swift */; };
+		EAB721912B59502B00628EEB /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB721902B59502B00628EEB /* extensions.swift */; };
+		EAB721942B59559400628EEB /* chartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB721922B59559400628EEB /* chartTableViewCell.swift */; };
+		EAB721952B59559400628EEB /* chartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB721932B59559400628EEB /* chartTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		EAB721832B593CCD00628EEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAB721862B593CCD00628EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAB721882B593CCD00628EEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAB7218E2B593CF100628EEB /* customChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customChart.swift; sourceTree = "<group>"; };
+		EAB721902B59502B00628EEB /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		EAB721922B59559400628EEB /* chartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chartTableViewCell.swift; sourceTree = "<group>"; };
+		EAB721932B59559400628EEB /* chartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = chartTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +48,8 @@
 		EAB7216E2B593CCC00628EEB = {
 			isa = PBXGroup;
 			children = (
+				EAB7218E2B593CF100628EEB /* customChart.swift */,
+				EAB721902B59502B00628EEB /* extensions.swift */,
 				EAB721792B593CCC00628EEB /* testChart */,
 				EAB721782B593CCC00628EEB /* Products */,
 			);
@@ -63,6 +73,8 @@
 				EAB721832B593CCD00628EEB /* Assets.xcassets */,
 				EAB721852B593CCD00628EEB /* LaunchScreen.storyboard */,
 				EAB721882B593CCD00628EEB /* Info.plist */,
+				EAB721922B59559400628EEB /* chartTableViewCell.swift */,
+				EAB721932B59559400628EEB /* chartTableViewCell.xib */,
 			);
 			path = testChart;
 			sourceTree = "<group>";
@@ -125,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAB721952B59559400628EEB /* chartTableViewCell.xib in Resources */,
 				EAB721872B593CCD00628EEB /* LaunchScreen.storyboard in Resources */,
 				EAB721842B593CCD00628EEB /* Assets.xcassets in Resources */,
 				EAB721822B593CCC00628EEB /* Main.storyboard in Resources */,
@@ -138,7 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAB721912B59502B00628EEB /* extensions.swift in Sources */,
 				EAB7217F2B593CCC00628EEB /* ViewController.swift in Sources */,
+				EAB721942B59559400628EEB /* chartTableViewCell.swift in Sources */,
+				EAB7218F2B593CF100628EEB /* customChart.swift in Sources */,
 				EAB7217B2B593CCC00628EEB /* AppDelegate.swift in Sources */,
 				EAB7217D2B593CCC00628EEB /* SceneDelegate.swift in Sources */,
 			);
@@ -218,7 +234,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -275,7 +291,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -300,6 +316,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,6 +345,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
