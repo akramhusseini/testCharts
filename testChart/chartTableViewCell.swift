@@ -55,11 +55,25 @@ class chartTableViewCell: UITableViewCell {
     }
     
     private func populateLabels(maxValue: CGFloat, newData: [CGFloat]) {
+        let targetValue: CGFloat = 9
+            let divisor1: CGFloat = 10
+            let divisor2: CGFloat = 2
         guard !data.isEmpty else { return }
         var unitValue = maxValue / 3
         
         var multiplyer: CGFloat = 1
-        while unitValue > 9 {
+        while unitValue > targetValue {
+            guard (unitValue / divisor1) > targetValue else {
+                let fractures: [[CGFloat]] = [
+                        [divisor1, round(unitValue / divisor1) / (unitValue / divisor1)],
+                        [divisor2, round(unitValue / divisor2) / (unitValue / divisor2)]
+                    ]
+                let minFractionIndex = fractures.enumerated().min(by: { $0.element[1] < $1.element[1] })?.offset ?? 0
+                let fraction = fractures[minFractionIndex][0]
+                    unitValue /= fraction
+                    multiplyer *= fraction
+                continue
+            }
             unitValue /= 10
             multiplyer *= 10
         }
