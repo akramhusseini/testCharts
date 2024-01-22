@@ -22,7 +22,6 @@ class chartTableViewCell: UITableViewCell {
     @IBOutlet weak var stroakLine2: UIView!
     @IBOutlet weak var label3: UILabel!
     @IBOutlet weak var stroakLine3: UIView!
-    @IBOutlet weak var label4: UILabel!
     @IBOutlet weak var stroakLine4: UIView!
     @IBOutlet weak var zigChart: ZigzagChartView!
     var data: [CGFloat] = []
@@ -75,13 +74,11 @@ class chartTableViewCell: UITableViewCell {
             label1.text = String(format: "%.0F", round(baselineNumber * multiplyer))
             label2.text = String(format: "%.0F", round(baselineNumber / 3 * 2 * multiplyer))
             label3.text = String(format: "%.0F", round(baselineNumber / 3  * multiplyer))
-            label4.text = "\(Int(minValue))"
             return
         }
         label1.text = "\(Int(maxValue))"
         label2.text = String(format: "%.0F", round(unitValue * 2 * multiplyer))
         label3.text = String(format: "%.0F", round(unitValue * multiplyer))
-        label4.text = "\(Int(minValue))"
     }
 
     private func addStroakLines() {
@@ -89,12 +86,6 @@ class chartTableViewCell: UITableViewCell {
         stroakLine2.addStroakLine(lineYPosition: 0, lineWidth: 1, color: UIColor(hex: "#ECEDF1"), dashPattern: [4,4], viewWidth: strokeLineWidth)
         stroakLine3.addStroakLine(lineYPosition: 0, lineWidth: 1, color: UIColor(hex: "#ECEDF1"), dashPattern: [4,4], viewWidth: strokeLineWidth)
         stroakLine4.addStroakLine(lineYPosition: 0, lineWidth: 1, color: UIColor(hex: "#ECEDF1"), dashPattern: [4,4], viewWidth: strokeLineWidth)
-    }
-    
-    private func removeStroakLineSublayers() {
-        contentView.layer.sublayers?
-            .filter { $0 is CAShapeLayer }
-            .forEach { $0.removeFromSuperlayer() }
     }
     
 }

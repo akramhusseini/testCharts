@@ -104,8 +104,8 @@
                                             <constraint firstAttribute="height" constant="1" id="A5v-ma-OfU"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQN-Y3-Qn3">
-                                        <rect key="frame" x="0.0" y="94.666666666666657" width="26.333333333333332" height="11"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQN-Y3-Qn3">
+                                        <rect key="frame" x="0.0" y="94.666666666666657" width="6.666666666666667" height="11"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="11" id="A5o-Pl-hgm"/>
                                         </constraints>
@@ -180,7 +180,6 @@
                 <outlet property="label1" destination="qcG-Ei-izX" id="XYV-eo-73m"/>
                 <outlet property="label2" destination="NfU-u8-ses" id="l92-Cy-m11"/>
                 <outlet property="label3" destination="6Xe-o4-ONO" id="0CH-z1-tXN"/>
-                <outlet property="label4" destination="LQN-Y3-Qn3" id="hLl-3D-4g3"/>
                 <outlet property="maxValueLabel" destination="PQB-Sc-Q1D" id="rzY-gK-2Jb"/>
                 <outlet property="stroakLine1" destination="UUg-BN-ZgD" id="KON-aI-FaU"/>
                 <outlet property="stroakLine2" destination="iFz-AC-EKp" id="Se8-Zt-g7H"/>
