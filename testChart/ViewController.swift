@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! { didSet{
         tableView.register(UINib(nibName: "chartTableViewCell", bundle: nil), forCellReuseIdentifier: "chartTableViewCell")
     }}
-    let chartHeight: CGFloat = 108
     var chartWidth: CGFloat = UIScreen.main.bounds.width - 32
     
     let origionalData: [[CGFloat]] = [
@@ -32,7 +31,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPullToRandomimze()
-        randomize()
+        //randomize()
+        data = origionalData
     }
 
     private func randomize() {

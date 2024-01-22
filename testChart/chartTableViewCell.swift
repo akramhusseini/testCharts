@@ -70,13 +70,12 @@ class chartTableViewCell: UITableViewCell {
             let maxAdjustedValue = round( biggestAdjustedNumber / 100 ) * 100
             self.data = adjustedData.map{$0 / maxAdjustedValue * 100}
             let baselineNumber = round(unitValue) * 3
-            let minValue = round( newData.reduce(CGFloat.greatestFiniteMagnitude) { min($0, $1) } / 100 ) * 100
             label1.text = String(format: "%.0F", round(baselineNumber * multiplyer))
             label2.text = String(format: "%.0F", round(baselineNumber / 3 * 2 * multiplyer))
             label3.text = String(format: "%.0F", round(baselineNumber / 3  * multiplyer))
             return
         }
-        label1.text = "\(Int(maxValue))"
+        label1.text = String(format: "%.0F", round(unitValue * 3 * multiplyer))
         label2.text = String(format: "%.0F", round(unitValue * 2 * multiplyer))
         label3.text = String(format: "%.0F", round(unitValue * multiplyer))
     }

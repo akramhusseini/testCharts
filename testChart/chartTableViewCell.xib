@@ -123,6 +123,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dP-ND-hYc" customClass="ZigzagChartView" customModule="testChart" customModuleProvider="target">
                                         <rect key="frame" x="46.333333333333343" y="0.0" width="256.66666666666663" height="108"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="108" id="84s-Mt-B3q"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
