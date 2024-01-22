@@ -33,6 +33,14 @@ class chartTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        // Reset the state of ZigzagChartView
+        zigChart.reset()
+    }
+
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         addStroakLines()
@@ -53,7 +61,7 @@ class chartTableViewCell: UITableViewCell {
         var unitValue = (maxValue - minValue) / 3
         
         var multiplyer: CGFloat = 1
-        while unitValue > 10 {
+        while unitValue > 14 {
             unitValue /= 10
             multiplyer *= 10
         }
@@ -81,6 +89,12 @@ class chartTableViewCell: UITableViewCell {
         stroakLine2.addStroakLine(lineYPosition: 0, lineWidth: 1, color: UIColor(hex: "#ECEDF1"), dashPattern: [4,4], viewWidth: strokeLineWidth)
         stroakLine3.addStroakLine(lineYPosition: 0, lineWidth: 1, color: UIColor(hex: "#ECEDF1"), dashPattern: [4,4], viewWidth: strokeLineWidth)
         stroakLine4.addStroakLine(lineYPosition: 0, lineWidth: 1, color: UIColor(hex: "#ECEDF1"), dashPattern: [4,4], viewWidth: strokeLineWidth)
+    }
+    
+    private func removeStroakLineSublayers() {
+        contentView.layer.sublayers?
+            .filter { $0 is CAShapeLayer }
+            .forEach { $0.removeFromSuperlayer() }
     }
     
 }

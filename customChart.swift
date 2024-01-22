@@ -70,4 +70,10 @@ class ZigzagChartView: UIView {
         return gradientLayer
     }
     
+    func reset() {
+            data = []
+            layer.sublayers?.forEach { $0.removeFromSuperlayer() }
+            setNeedsDisplay()
+        }
+    
 }
