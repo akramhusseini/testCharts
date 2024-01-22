@@ -48,19 +48,18 @@ class chartTableViewCell: UITableViewCell {
     func initView(newData: [CGFloat]) {
         let biggestNumber = newData.reduce(CGFloat.leastNormalMagnitude) { max($0, $1) }
         let maxValue = round( biggestNumber / 100 ) * 100
-        let minValue = round( newData.reduce(CGFloat.greatestFiniteMagnitude) { min($0, $1) } / 100 ) * 100
         maxValueLabel.text = String(format: "%.0F", biggestNumber)
-        self.data = newData.map{$0 / maxValue * 100}
-        populateLabels(maxValue: maxValue, minValue: minValue, newData: newData)
+        self.data = newData.map{$0 / biggestNumber * 100}
+        populateLabels(maxValue: maxValue, newData: newData)
         zigChart.data = self.data
     }
     
-    private func populateLabels(maxValue: CGFloat, minValue: CGFloat, newData: [CGFloat]) {
+    private func populateLabels(maxValue: CGFloat, newData: [CGFloat]) {
         guard !data.isEmpty else { return }
-        var unitValue = (maxValue - minValue) / 3
+        var unitValue = maxValue / 3
         
         var multiplyer: CGFloat = 1
-        while unitValue > 14 {
+        while unitValue > 9 {
             unitValue /= 10
             multiplyer *= 10
         }
@@ -73,8 +72,10 @@ class chartTableViewCell: UITableViewCell {
             label1.text = String(format: "%.0F", round(baselineNumber * multiplyer))
             label2.text = String(format: "%.0F", round(baselineNumber / 3 * 2 * multiplyer))
             label3.text = String(format: "%.0F", round(baselineNumber / 3  * multiplyer))
+            label1.textColor = UIColor.cyan
             return
         }
+        label1.textColor = UIColor(hex: "#8D96AB")
         label1.text = String(format: "%.0F", round(unitValue * 3 * multiplyer))
         label2.text = String(format: "%.0F", round(unitValue * 2 * multiplyer))
         label3.text = String(format: "%.0F", round(unitValue * multiplyer))
