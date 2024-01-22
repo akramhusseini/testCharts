@@ -11,7 +11,6 @@ import UIKit
 class ZigzagChartView: UIView {
 
     var data: [CGFloat] = [/* Your data array here */]
-    let height: CGFloat = 108.0
     // This is required to conform to NSCoding
      required init?(coder aDecoder: NSCoder) {
          super.init(coder: aDecoder)
@@ -42,7 +41,7 @@ class ZigzagChartView: UIView {
 
     private func createZigzagPath() -> UIBezierPath {
         let path = UIBezierPath()
-        path.move(to: CGPoint(x: -1, y: height))
+        path.move(to: CGPoint(x: -1, y: bounds.height))
         let pointSpacing = bounds.width / CGFloat(data.count - 1)
         for (index, value) in data.enumerated() {
             let x = index == 0 ? -1 : index == data.count - 1 ? bounds.width + 1 : CGFloat(index) * pointSpacing

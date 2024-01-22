@@ -66,7 +66,7 @@ class chartTableViewCell: UITableViewCell {
         guard unitValue == round(unitValue) else {
             let adjustedData = newData.map{$0/round(unitValue) * unitValue }
             let biggestAdjustedNumber = newData.reduce(CGFloat.leastNormalMagnitude) { max($0, $1) }
-            let maxAdjustedValue = round( biggestAdjustedNumber / 100 ) * 100
+            let maxAdjustedValue = round( biggestAdjustedNumber / multiplyer ) * multiplyer
             self.data = adjustedData.map{$0 / maxAdjustedValue * 100}
             let baselineNumber = round(unitValue) * 3
             label1.text = String(format: "%.0F", round(baselineNumber * multiplyer))
