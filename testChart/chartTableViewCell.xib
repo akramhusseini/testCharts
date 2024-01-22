@@ -121,14 +121,14 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dP-ND-hYc" customClass="ZigzagChartView" customModule="testChart" customModuleProvider="target">
-                                        <rect key="frame" x="46.333333333333343" y="0.0" width="256.66666666666663" height="108"/>
+                                        <rect key="frame" x="46.333333333333343" y="-10" width="256.66666666666663" height="118"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="uri-Yz-LQA" firstAttribute="leading" secondItem="rqE-nJ-26N" secondAttribute="leading" id="2YQ-oN-ajc"/>
-                                    <constraint firstItem="3dP-ND-hYc" firstAttribute="top" secondItem="rqE-nJ-26N" secondAttribute="top" id="4NJ-29-ee3"/>
+                                    <constraint firstItem="3dP-ND-hYc" firstAttribute="top" secondItem="rqE-nJ-26N" secondAttribute="top" constant="-10" id="4NJ-29-ee3"/>
                                     <constraint firstItem="UUg-BN-ZgD" firstAttribute="leading" secondItem="qcG-Ei-izX" secondAttribute="leading" id="7ZN-Un-BWZ"/>
                                     <constraint firstAttribute="height" constant="108" id="ALz-SM-7Q7"/>
                                     <constraint firstItem="oLp-yV-k3w" firstAttribute="bottom" secondItem="3dP-ND-hYc" secondAttribute="bottom" constant="1.5" id="AjX-Fh-WmY"/>

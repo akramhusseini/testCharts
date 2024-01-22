@@ -15,8 +15,8 @@ class ViewController: UIViewController {
     let chartHeight: CGFloat = 108
     var chartWidth: CGFloat = UIScreen.main.bounds.width - 32
     
-    let data: [[CGFloat]] = [
-        [0, 60, 550, 485, 140, 160, 180, 200, 17, 600, 402, 55, 85, 420, 35, 19, 60, 80, 201, 497, 550 , 190 , 186, 55, 201, 140, 160, 612, 120],
+    var data: [[CGFloat]] = [
+        [169, 60, 550, 485, 140, 160, 180, 200, 17, 600, 402, 55, 85, 420, 35, 19, 60, 80, 201, 497, 550 , 190 , 186, 55, 201, 140, 160, 612, 120],
         [0, 60, 1025, 1060, 1130, 60, 80, 120, 17, 60, 120, 86, 285, 139, 105],
         [0, 60, 55, 85, 40, 60, 80, 20, 17, 60, 305, 255, 185, 140, 135, 190, 90, 80, 120, 280, 160 , 190 , 186, 155, 185, 140, 160 ,180, 120],
         [0, 6000, 7140, 7138, 7302, 6006, 8023, 6245, 8704, 6030, 5703, 8605, 7067, 7039, 7005],
@@ -24,8 +24,26 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupPullToRandomimze()
+        randomize()
     }
 
+    private func randomize() {
+        data = data.applyingRandomMultipliers()
+    }
+    
+    private func setupPullToRandomimze() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
+    
+    @objc private func handleRefresh() {
+        randomize()
+        tableView.reloadData()
+        tableView.refreshControl?.endRefreshing()
+    }
+    
 }
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {

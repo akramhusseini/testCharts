@@ -85,3 +85,27 @@ extension UIView {
         }
     }
 }
+
+extension CGFloat {
+    func rounded(toDecimalPlaces decimalPlaces: Int) -> CGFloat {
+        let multiplier = pow(10, CGFloat(decimalPlaces))
+        return (self * multiplier).rounded(.toNearestOrAwayFromZero) / multiplier
+    }
+}
+
+extension Array where Element == CGFloat {
+    func applyingRandomMultipliers() -> [CGFloat] {
+        return self.map { value in
+            let randomMultiplier = CGFloat.random(in: 0.5...10.0).rounded(toDecimalPlaces: 2)
+            return value * randomMultiplier
+        }
+    }
+}
+
+extension Array where Element == [CGFloat] {
+    func applyingRandomMultipliers() -> [[CGFloat]] {
+        return self.map { array in
+            return array.applyingRandomMultipliers()
+        }
+    }
+}
