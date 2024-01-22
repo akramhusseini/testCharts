@@ -56,8 +56,8 @@ class chartTableViewCell: UITableViewCell {
     
     private func populateLabels(maxValue: CGFloat, newData: [CGFloat]) {
         let targetValue: CGFloat = 9
-            let divisor1: CGFloat = 10
-            let divisor2: CGFloat = 2
+        let divisor1: CGFloat = 10
+        let divisor2: CGFloat = 2
         guard !data.isEmpty else { return }
         var unitValue = maxValue / 3
         
@@ -86,10 +86,8 @@ class chartTableViewCell: UITableViewCell {
             label1.text = String(format: "%.0F", round(baselineNumber * multiplyer))
             label2.text = String(format: "%.0F", round(baselineNumber / 3 * 2 * multiplyer))
             label3.text = String(format: "%.0F", round(baselineNumber / 3  * multiplyer))
-            label1.textColor = UIColor.cyan
             return
         }
-        label1.textColor = UIColor(hex: "#8D96AB")
         label1.text = String(format: "%.0F", round(unitValue * 3 * multiplyer))
         label2.text = String(format: "%.0F", round(unitValue * 2 * multiplyer))
         label3.text = String(format: "%.0F", round(unitValue * multiplyer))
