@@ -68,7 +68,6 @@ class chartTableViewCell: UITableViewCell {
             label2.text = String(format: "%.0F", round(baselineNumber / 3 * 2 * multiplyer))
             label3.text = String(format: "%.0F", round(baselineNumber / 3  * multiplyer))
             label4.text = "\(Int(minValue))"
-            
             return
         }
         label1.text = "\(Int(maxValue))"

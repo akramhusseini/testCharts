@@ -42,15 +42,27 @@ class ZigzagChartView: UIView {
 
     private func createZigzagPath() -> UIBezierPath {
         let path = UIBezierPath()
+
         path.move(to: CGPoint(x: 0 , y: bounds.height))
+
         let pointSpacing = bounds.width / CGFloat(data.count - 1)
+
         for (index, value) in data.enumerated() {
             let x = CGFloat(index) * pointSpacing
             let y = bounds.height - value
             path.addLine(to: CGPoint(x: x, y: y))
         }
+
+        path.addLine(to: CGPoint(x: bounds.width + 1, y: bounds.height))
+
+        // Draw a filled rectangle to cover the last extension line
+        let coverRect = UIBezierPath(rect: CGRect(x: bounds.width, y: 0, width: 1, height: bounds.height))
+        UIColor.white.setFill()
+        coverRect.fill()
+
         return path
     }
+
 
     private func createGradientLayer(for path: UIBezierPath, max: CGFloat) -> CAGradientLayer {
         let endPointPercentage: CGFloat = max / bounds.height
