@@ -1,6 +1,7 @@
 # ZigzagChart!
 
-![Simulator Screenshot - iPhone 15 - 2024-01-24 at 17 33 16](https://github.com/akramhusseini/testCharts/assets/46135977/666ffda2-46ed-4b18-80a0-7ee0d0cd4fa4)
+<img src="https://github.com/akramhusseini/testCharts/assets/46135977/666ffda2-46ed-4b18-80a0-7ee0d0cd4fa4" width="50%" height="50%">
+
 
 
 [ZigzagChart] is a proof-of-concept (POC) project demonstrating the creation of a custom chart with a zigzag line and a gradient fill using Swift and UIKit.
