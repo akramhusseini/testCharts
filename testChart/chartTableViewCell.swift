@@ -36,6 +36,7 @@ class chartTableViewCell: UITableViewCell {
         super.prepareForReuse()
 
         // Reset the state of ZigzagChartView
+        self.data.removeAll()
         zigChart.reset()
     }
 
@@ -47,31 +48,53 @@ class chartTableViewCell: UITableViewCell {
     
     func initView(newData: [CGFloat]) {
         let biggestNumber = newData.reduce(CGFloat.leastNormalMagnitude) { max($0, $1) }
-        let maxValue = round( biggestNumber / 100 ) * 100
         maxValueLabel.text = String(format: "%.0F", biggestNumber)
-        self.data = newData.map{$0 / biggestNumber * 100}
-        populateLabels(maxValue: maxValue, newData: newData)
+        setupLabels(newData)
         zigChart.data = self.data
     }
     
-    private func populateLabels(maxValue: CGFloat, newData: [CGFloat]) {
+    
+    private func setupLabels(_ newData: [CGFloat]) {
+        guard let (value1, value2, value3, newData) = populateLabels(newData) else { return }
+        if let newData {
+            self.data = newData
+        }
+        label1.text = String(format: "%.0F", value1)
+        label2.text = String(format: "%.0F", value2)
+        label3.text = String(format: "%.0F", value3)
+        self.data = self.data.map{$0 / value1 * 100}
+    }
+    
+     func populateLabels(_ newData: [CGFloat]) -> (CGFloat, CGFloat, CGFloat, [CGFloat]?)? {
         let targetValue: CGFloat = 9
-        let divisor1: CGFloat = 10
-        let divisor2: CGFloat = 2
-        guard !data.isEmpty else { return }
-        var unitValue = maxValue / 3
-        
+         let divisor2: CGFloat = 2
+         let divisor10: CGFloat = 10
+         guard !newData.isEmpty else { return nil }
+         let maxValue = newData.reduce(CGFloat.leastNormalMagnitude) { max($0, $1) }
+         var unitValue = maxValue / 3
         var multiplyer: CGFloat = 1
         while unitValue > targetValue {
-            guard (unitValue / divisor1) > targetValue else {
+            guard (unitValue / divisor10) > targetValue else {
                 let fractures: [[CGFloat]] = [
-                        [divisor1, round(unitValue / divisor1) / (unitValue / divisor1)],
-                        [divisor2, round(unitValue / divisor2) / (unitValue / divisor2)]
+                        [divisor2, round(unitValue / divisor2) / (unitValue / divisor2)],
+                        [divisor10, round(unitValue / divisor10) / (unitValue / divisor10)],
                     ]
-                let minFractionIndex = fractures.enumerated().min(by: { $0.element[1] < $1.element[1] })?.offset ?? 0
-                let fraction = fractures[minFractionIndex][0]
+                var minDifference = CGFloat.greatestFiniteMagnitude
+                var minFractionIndex: Int?
+                for (index, row) in fractures.enumerated() {
+                    guard row.count > 1 else { continue }
+                    let difference = abs(row[1] - 1)
+                    if difference < minDifference {
+                        minDifference = difference
+                        minFractionIndex = index
+                    }
+                }
+                if let minFractionIndex = minFractionIndex,
+                   let fraction = fractures[minFractionIndex].first {
                     unitValue /= fraction
                     multiplyer *= fraction
+                   
+                }
                 continue
             }
             unitValue /= 10
@@ -79,18 +102,16 @@ class chartTableViewCell: UITableViewCell {
         }
         guard unitValue == round(unitValue) else {
             let adjustedData = newData.map{$0/round(unitValue) * unitValue }
-            let biggestAdjustedNumber = newData.reduce(CGFloat.leastNormalMagnitude) { max($0, $1) }
-            let maxAdjustedValue = round( biggestAdjustedNumber / multiplyer ) * multiplyer
-            self.data = adjustedData.map{$0 / maxAdjustedValue * 100}
             let baselineNumber = round(unitValue) * 3
-            label1.text = String(format: "%.0F", round(baselineNumber * multiplyer))
-            label2.text = String(format: "%.0F", round(baselineNumber / 3 * 2 * multiplyer))
-            label3.text = String(format: "%.0F", round(baselineNumber / 3  * multiplyer))
-            return
+            let value1 = round(baselineNumber * multiplyer)
+            let value2 = round(baselineNumber * multiplyer) / 3 * 2
+            let value3 = round(baselineNumber * multiplyer) / 3
+            return (value1, value2, value3, adjustedData)
         }
-        label1.text = String(format: "%.0F", round(unitValue * 3 * multiplyer))
-        label2.text = String(format: "%.0F", round(unitValue * 2 * multiplyer))
-        label3.text = String(format: "%.0F", round(unitValue * multiplyer))
+        let value1 = round(unitValue * 3 * multiplyer)
+        let value2 = round(unitValue * 2 * multiplyer)
+        let value3 =  round(unitValue * multiplyer)
+         return (value1, value2, value3, nil)
     }
 
     private func addStroakLines() {
